@@ -1,0 +1,5 @@
+*.bkp
+.DS_Store
+*.pdf
+*.drawio
+screenshot.png
