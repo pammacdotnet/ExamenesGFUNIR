@@ -1,5 +1,5 @@
 #import "@preview/unify:0.7.1": num, qty, numrange, qtyrange, unit
-
+#set text(lang: "es")
 
 #align(center)[*Tema 1: Campo Eléctrico*]
 
