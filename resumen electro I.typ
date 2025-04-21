@@ -103,6 +103,8 @@
 // Put this here to avoid affecting the title
 #show link: underline
 
+#image("uf.png")
+
 #align(center)[*Tema 1: Campo Eléctrico*]
 
 = Fundamentos de electroestática.
