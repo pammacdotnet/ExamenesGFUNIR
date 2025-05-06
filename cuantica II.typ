@@ -1,6 +1,6 @@
 
 #import "@preview/physica:0.9.5": *
-#set text(size: 20pt, lang: "es")
+#set text(size: 20pt, lang: "es", font: "Libertinus Serif")
 #set par(justify: true)
 #set page(margin: 0.5cm, paper: "a4")
 #set enum(numbering: "a)")
@@ -36,7 +36,7 @@
       problem-number = 3
       puntos = "4️⃣"
     }
-    Problema #problem-number #h(65%, weak: true) #puntos p. #linebreak()
+    Problema #problem-number #h(60%, weak: true) #puntos p. #linebreak()
   ]
   linebreak()
 }
