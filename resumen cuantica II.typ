@@ -2,12 +2,10 @@
 #show: super-plus-as-dagger
 
 #import "@preview/unify:0.7.1": num, qty, numrange, qtyrange, unit
-//#set text(lang: "es", font: "Cantarell")
 
 // Meta data
-#set document(title: "Typst Math for Undergrads", author: "johanvx")
+#set document(title: "Resumen de Física Cuántica II (Unir Física)", author: "Alberto Corbi")
 
-// headcolor
 #let headcolor = rgb("004225")
 
 // Margin and footer
@@ -31,58 +29,13 @@
   },
 )
 
-// Font size
-#let scriptsize = 7pt
 #let normalsize = 10pt
-#let large = 12pt
-#set text(size: normalsize, lang: "en")
+#let large = 18pt
+#set text(size: normalsize, lang: "es")
 
-// Some horizontal spacing
-#let kern(length) = h(length, weak: true)
-#let enspace = kern(0.5em)
 
-// For table/grid, something like "lhs \enspace rhs"
-#let cell(lhs, rhs) = box(lhs + enspace + rhs)
-// Grid for code blocks
-#set grid(columns: (2em, auto))
-// Table for math-code listing
-#set table(stroke: none, align: horizon + left, inset: 0pt, row-gutter: 0.45em)
-
-// LaTeX and TeX logos
-#let TeX = context {
-  let e = measure(text(normalsize, "E"))
-  let T = "T"
-  let E = text(normalsize, baseline: e.height / 2, "E")
-  let X = "X"
-  box(T + kern(-0.1667em) + E + kern(-0.125em) + X)
-}
-#let LaTeX = context {
-  let l = measure(text(10pt, "L"))
-  let a = measure(text(7pt, "A"))
-  let L = "L"
-  let A = text(7pt, baseline: a.height - l.height, "A")
-  box(L + kern(-0.36em) + A + kern(-0.15em) + TeX)
-}
-
-// Unavailable (last check version)
-#show "??": box(text(red, [v#sys.version #emoji.crossmark]))
-// Tricky
-#show "!!": box(text(blue, emoji.drops))
-// No idea
-#show "?!": box(text(orange, [No idea #emoji.face.unhappy]))
-// Tricky figure numbering
-#set figure(
-  numbering: n => {
-    ([??], [!!], [?!]).at(n)
-  },
-)
-// No prefix
-#set ref(supplement: "")
-
-// Justified paragraphs
 #set par(justify: true)
 
-// Run-in sections, like LaTeX \paragraph
 #show heading.where(level: 1): it => text(
   size: normalsize,
   weight: "bold",
@@ -90,23 +43,21 @@
   it.body + h(0.67em),
 )
 
-// Black raw code
-#show raw.where(block: false): it => { it.text }
-
-// Two-column layout
 #show: rest => columns(3, rest, gutter: .4cm)
 
 #align(
   center,
-  link("https://github.com/johanvx/typst-undergradmath")[
-    #text(large, headcolor)[*Resumen Cuántica II – UNIR Física*]
+  link("https://bit.ly/unirfiscuantica2")[
+    #text(large, headcolor)[#context document.title]
   ],
 )
 
-// Put this here to avoid affecting the title
-#show link: underline
+#image("logo resumen cuantica ii.png")
 
-#image("uf.png")
+#show align: it => {
+  v(10pt)
+  text(size: 12pt, it)
+}
 
 #align(center)[*Tema 1: Formalismo de Dirac*]
 
@@ -124,16 +75,14 @@
 
 - Postulados:
   + Todo sistema cuántico se describe por un ket.
-  + Multiplicar un ket por un número complejo no cambia el estado
-    (describe el mismo rayo).
-  + El producto interno es lineal y su resultado es un número complejo: $braket(alpha, beta) = braket(beta, alpha)^*$.
+  + Multiplicar un ket por un número complejo no cambia el estado.
+  + El producto interno es lineal y devuelve un complejo: $braket(alpha, beta) = braket(beta, alpha)^*$.
   + El producto interno es positivo definido: $braket(alpha, alpha) >= 0$.
 
 = Operadores
 - Representan _observables físicos_ y actúan sobre kets: $A ket(alpha)$.
-
-- _Autoestados_ y _autovalores_: Si $A ket(a) = a ket(a)$, entonces $ket(a)$ es autoestado con autovalor $a$.
-- #strong[Operador hermítico];: igual a su adjunto, tiene autovalores
+- _Autoestados_ y _autovalores_: Si $A ket(a) = a ket(a)$, $arrow.long ket(a)$ es autoestado con autovalor $a$.
+- _Operador hermítico_: igual a su adjunto, tiene autovalores
   reales y autovectores ortogonales.
 - #strong[Operador unitario];: cumple $U^+U=I$.
 
@@ -147,7 +96,6 @@ Permite expandir cualquier ket como combinación lineal de la base.
 = Representación matricial
 - Los operadores y vectores se representan como _matrices y
   vectores columna/fila_:
-
 - El producto de operadores y vectores se interpreta como multiplicación matricial.
 - Para operadores hermíticos, la matriz es igual a su _traspuesta conjugada_.
 
@@ -158,33 +106,107 @@ Se toma el complejo conjugado de los coeficientes y
 se cambia la notación de ket a bra:
 
 $
-  angle.l mu \| = \( 2 i \)^(\*) angle.l beta_1 \| + \( 1 - 3 i \)^(\*) angle.l beta_2 \| =\ - 2 i angle.l beta_1 \| + \( 1 + 3 i \) angle.l beta_2 \|
+  bra(mu) = (2i)^*bra(beta_1) + (1-3i)^*bra(beta_2) =\
+  -2i bra(beta_1) + (1+3i)bra(beta_2)
 $
 
 - Calcular el producto interno $braket(mu, mu)$, suponiendo que $ket(beta_1)$ y $ket(beta_2)$ son ortonormales.
 
-$ angle.l mu \| mu angle.r = \| 2 i \|^2 + \| 1 - 3 i \|^2 = \ 4 + \( 1^2 + 3^2 \) = 4 + 10 = 14 $
 
-- Normalizar el ket del Ejercicio 1. Se divide por la raíz del producto interno (norma):
+$
+  braket(mu, mu) = abs(2i)^2 + abs(1-3i)^2 =\
+  4+(1^2+3^2) = 4+10=14
+$
 
-$ \| mu_("norm") angle.r = 1 / sqrt(14) (2 i \| beta_1 angle.r + \( 1 - 3 i \) \| beta_2 angle.r) $
+- Normalizar el ket del ejercicio 1. Se divide por la raíz del producto interno (norma):
+
+$
+  ket(mu_"norm") = 1 / sqrt(14)(2i ket(beta_1)+(1-3i) ket(beta_2))
+$
 
 - Dado un ket general:
 
-$ \| alpha angle.r = sum_j c_j \( alpha \) \| a_j angle.r $
-
-con $\| a_j angle.r$ formando una base ortonormal, calcular su
+$
+  ket(alpha) = sum_j c_j (alpha) ket(a_j)
+$
+con $ket(a_j)$ formando una base ortonormal, calcular su
 norma:
 
-$ bar.v.double \| alpha angle.r bar.v.double = sqrt(sum_i \| c_i \( alpha \) \|^2) $
+$
+  norm(ket(alpha)) = sqrt(sum_i abs(c_i (alpha))^2)
+$
 
 - Calcular el elemento matricial del operador:
-
-$ Y = X \| alpha angle.r angle.l beta \| $
+$
+  Y = X ket(alpha) bra(beta)
+$
 
 Usando la relación de completitud:
 
-$ Y_(i j) = sum_k X_(i k) c_k \( alpha \) c_j^(\*) \( beta \) $
+$ Y_(i j) = sum_k X_(i k) c_k (alpha) c_j^* (beta) $
 
 Es decir, se expande el operador $Y$ como una combinación matricial
 usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
+
+
+#align(center)[*Tema 2: Medidas y observables*]
+
+= Medidas en mecánica cuántica
+- El resultado de una medida es un autovalor de un operador hermítico.
+
+- La probabilidad de obtener ese autovalor es el cuadrado del módulo del producto interno entre el estado cuántico y el autovector asociado.
+- Tras la medida, el sistema colapsa al autoestado correspondiente.
+
+= Valor esperado
+- El valor esperado de un observable $A$ en un estado $ket(alpha)$
+  se define como:
+  $
+    expval(A) = mel(alpha, A, alpha) = sum a' abs(braket(a', a))^2
+  $
+
+- No confundir con los autovalores: es una media ponderada por probabilidades.
+
+= Sistema de espín 1/2
+- El espín tiene solo dos estados: $ket(+)$ y $ket(-)$.
+- Se definen operadores como $S_z, S_(+), S_(-)$ y sus representaciones matriciales.
+- Los operadores $S_x$ y $S_y$ se construyen mediante combinaciones lineales y fases complejas, ilustrando la necesidad de usar números complejos en mecánica cuántica.
+
+= Conmutadores y anticonmutadores
+- Conmutador: $[A, B] = A B - B A$
+
+- Anticonmutador: ${A, B} = A B + B A$
+- En sistemas de espín 1/2:
+
+  $
+    [S_i, S_j] = i planck.reduce epsilon.alt_(i j k) S_k quad upright("y") quad {S_i , S_j} = planck.reduce^2 / 2 delta_(i j)
+  $
+
+= Observables compatibles
+- Dos observables son compatibles si sus operadores conmutan:
+  $[A, B] = 0$.
+- Tienen autovectores comunes: pueden ser medidos simultáneamente sin alterar el estado.
+
+= Observables incompatibles
+- Son aquellos cuyos operadores no conmutan: no tienen
+  autoestados comunes.
+
+- No es posible medirlos simultáneamente con certeza.
+
+= Operador y matriz de transformación
+- Para cambiar de base entre autoestados de dos observables diferentes se usa un operador unitario $U$:
+  $
+    ket(b') = U ket(a')
+  $
+
+- La representación matricial de $U$ se obtiene a partir de los
+  productos internos entre las bases.
+
+= Diagonalización
+- Consiste en hallar una base en la que el operador tenga forma
+  diagonal, lo cual simplifica los cálculos.
+- Se utiliza el teorema del determinante: $det (B - lambda I ) = 0$
+  para encontrar autovalores.
+
+= Otros conceptos
+- Traza de un operador: suma de elementos diagonales, independiente de base.
+- Cambio de base y transformación de operadores: se expresan como $X' = U^+ X U$.
