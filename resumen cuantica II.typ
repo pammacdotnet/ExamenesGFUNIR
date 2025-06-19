@@ -84,7 +84,7 @@
 - _Autoestados_ y _autovalores_: Si $A ket(a) = a ket(a)$, $arrow.long ket(a)$ es autoestado con autovalor $a$.
 - _Operador hermítico_: igual a su adjunto, tiene autovalores
   reales y autovectores ortogonales.
-- #strong[Operador unitario];: cumple $U^+U=I$.
+- Operador unitario: cumple $U^+U=I$.
 
 = Relación de completitud
 Los autoestados normalizados de un operador hermítico forman una _base ortonormal_:
@@ -101,12 +101,12 @@ Permite expandir cualquier ket como combinación lineal de la base.
 
 = Ejemplos
 - Calcular el bra correspondiente al ket:
-$ \| mu angle.r = 2 i \| beta_1 angle.r + \( 1 - 3 i \) \| beta_2 angle.r $
+$ ket(mu) = 2 i ket(beta_1) + (1 - 3 i ) ket(beta_2) $
 Se toma el complejo conjugado de los coeficientes y
 se cambia la notación de ket a bra:
 
 $
-  bra(mu) = (2i)^*bra(beta_1) + (1-3i)^*bra(beta_2) =\
+  bra(mu) = (2i)^*bra(beta_1) + (1-3i)^*bra(beta_2) = \
   -2i bra(beta_1) + (1+3i)bra(beta_2)
 $
 
@@ -114,7 +114,7 @@ $
 
 
 $
-  braket(mu, mu) = abs(2i)^2 + abs(1-3i)^2 =\
+  braket(mu, mu) = abs(2i)^2 + abs(1-3i)^2 = \
   4+(1^2+3^2) = 4+10=14
 $
 
@@ -202,6 +202,7 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
   productos internos entre las bases.
 
 = Diagonalización
+
 - Consiste en hallar una base en la que el operador tenga forma
   diagonal, lo cual simplifica los cálculos.
 - Se utiliza el teorema del determinante: $det (B - lambda I ) = 0$
@@ -217,12 +218,14 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 #align(center)[*Tema 3: Posición y momento*]
 
 = Espectros continuos
+
 - A diferencia de los sistemas con espectros discretos, en sistemas continuos (como posición y momento), los autovalores abarcan los reales.
 
 - Se sustituyen sumas por integrales y la delta de Kronecker por la delta de Dirac.
 - Se conserva la ortonormalidad y completitud, pero adaptadas al continuo.
 
 = Posición y función de onda
+
 - La función de onda es $braket(x, alpha)$, es decir, la proyección del estado cuántico sobre un estado de posición.
 
 - La probabilidad de encontrar una partícula en una región del espacio
@@ -230,7 +233,8 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 - La medición colapsa el estado al autoestado correspondiente.
 
 = Traslación
-- El _operador de traslación_ infinitesimal $cal(F)(d x)$ traslada un estado de posición: $cal(F)(d x) ket(x) = ket(x + d x)$ .
+
+- El _operador de traslación_ infinitesimal $cal(F)(d x)$ traslada un estado de posición: $cal(F)(d x) ket(x) = ket(x + d x)$.
 
 - Este operador cumple:
 
@@ -242,6 +246,7 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 - Se puede expresar como: $cal(F)(d x) = 1 -i K d x$, donde $K$ es el _generador de traslaciones_.
 
 = Momento $arrow$ generador traslacional
+
 - El operador momento lineal se identifica con el generador de traslaciones, ajustando dimensiones mediante $hbar$:
 
 - $cal(F)(d x) = 1 - i p d x slash hbar$.
@@ -253,6 +258,7 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 - El grupo de traslaciones es _abeliano_.
 
 = Función de onda en el espacio de posiciones
+
 - Se define como $psi (x) = braket(x, alpha)$.
 
 - El producto escalar entre estados se expresa como una integral de
@@ -261,6 +267,7 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
   probabilidades.
 
 = Operador momento en el espacio de posiciones
+
 - Se deduce que:
 
   - $p = -i hbar d slash d x$.
@@ -270,6 +277,7 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 - Esta forma se obtiene directamente del operador de traslación.
 
 = Función de onda en el espacio de momentos
+
 - Análogamente: $phi(p) = braket(p, alpha)$.
 
 - También tiene interpretación probabilística.
@@ -287,8 +295,8 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 
 #align(center)[*Tema 4: Evolución temporal*]
 
-
 = Operador de evolución $U(t, t_0)$
+
 - En mecánica cuántica el tiempo no tiene operador asociado; es solo un
   parámetro externo.
 
@@ -308,7 +316,7 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 = Ecuación de Schrödinger
 - Se deduce como:
 
-  $ i planck.reduce frac(partial, partial t) | psi(t) angle.r = H | psi(t) angle.r $
+  $ i planck.reduce frac(partial, partial t) | psi(t) angle.r = H ket(psi(t)) $
 
 - Soluciones según el hamiltoniano:
 
@@ -339,14 +347,14 @@ usando coeficientes del ket $ket(alpha)$ y del bra $bra(beta)$.
 - Considerando un campo magnético constante en dirección $z$, el
   hamiltoniano es: $H = omega S_z$.
 
-- El espín precesa en el plano $x y$ con frecuencia angular $omega$, y se demuestra: $expval(S_x) = planck.reduce / 2 cos \( omega t \) \, quad expval(S_y) = planck.reduce / 2 sin \( omega t \) \, quad expval(S_z) = 0$.
+- El espín precesa en el plano $x y$ con frecuencia angular $omega$, y se demuestra: $expval(S_x) = planck.reduce / 2 cos(omega t), quad expval(S_y) = planck.reduce / 2 sin(omega t), quad expval(S_z) = 0$.
 
 = Incertidumbre energía-tiempo
 - Aunque el tiempo no tiene operador, existe una relación significativa: $Delta E dot.op Delta t gt.tilde hbar$
 
 - Se introduce la amplitud de correlación $C(t) = braket(alpha(0), alpha(t))$, que mide cuánto ha cambiado el estado en el tiempo.
 
-- Si $C \( t \)$ se aleja significativamente de 1, implica un cambio apreciable del estado, con una escala de tiempo dada por la dispersión energética.
+- Si $C(t)$ se aleja significativamente de 1, implica un cambio apreciable del estado, con una escala de tiempo dada por la dispersión energética.
 
 = Ejercicio 1
 Demuestra que la cantidad $frac(H dot.op t, planck.reduce)$ carece de dimensiones.
@@ -480,12 +488,12 @@ $ a = sqrt(frac(m omega, 2 planck.reduce)) (x + frac(planck.reduce, m omega) fra
 El estado fundamental $ket(0)$ debe anularse con el operador de
 destrucción:
 
-$ a psi_0 \( x \) = 0 $
+$ a psi_0(x) = 0 $
 
 Sustituimos:
 
 $
-  (x + frac(planck.reduce, m omega) frac(d, d x)) psi_0 \( x \) = 0 \ arrow.r.double frac(d psi_0, d x) = - frac(m omega, planck.reduce) x psi_0 \( x \)
+  (x + frac(planck.reduce, m omega) frac(d, d x)) psi_0(x) = 0 \ arrow.r.double frac(d psi_0, d x) = - frac(m omega, planck.reduce) x psi_0(x)
 $
 
 Solucionamos esta ecuación diferencial:
@@ -494,24 +502,24 @@ $
   frac(d psi_0, psi_0) = - frac(m omega, planck.reduce) x d x arrow.r.double ln psi_0 = - frac(m omega, 2 planck.reduce) x^2 + C
 $
 
-$ psi_0 \( x \) = A e^(- frac(m omega, 2 planck.reduce) x^2) $
+$ psi_0(x) = A e^(- frac(m omega, 2 planck.reduce) x^2) $
 
 Resultado final:
-$ psi_0 \( x \) = (frac(m omega, pi planck.reduce))^(1 \/ 4) e^(- frac(m omega, 2 planck.reduce) x^2) $
+$ psi_0 (x) = (frac(m omega, pi planck.reduce))^(1 / 4) e^(- frac(m omega, 2 planck.reduce) x^2) $
 
 = Ejercicio 2
 Aplicar el lema de Baker-Hausdorff para calcular:
 
-$ e^(frac(i H t, planck.reduce)) x \( 0 \) e^(- frac(i H t, planck.reduce)) $
+$ e^(frac(i H t, planck.reduce)) x(0) e^(- frac(i H t, planck.reduce)) $
 
-Sea $A = x \( 0 \)$ y $G = H$, el hamiltoniano del oscilador armónico:
+Sea $A = x(0)$ y $G = H$, el hamiltoniano del oscilador armónico:
 
 $ H = frac(p^2, 2 m) + 1 / 2 m omega^2 x^2 $
 
 La fórmula de Baker-Hausdorff:
 
 $
-  e^(i lambda G) A e^(- i lambda G) = A + \ i lambda \[ G \, A \] + frac((i lambda)^2, 2 !) [G, [G, A]] + dots.h
+  e^(i lambda G) A e^(- i lambda G) = A + \ i lambda [G, A] + frac((i lambda)^2, 2 !) [G, [G, A]] + dots.h
 $
 
 Calculamos conmutadores:
@@ -541,7 +549,7 @@ $ psi_n(x, t) = e^(- frac(i E_n t, planck.reduce)) psi_n (x, 0) $
 Calculamos el producto interno en $t$:
 
 $
-  integral psi_n^(*) (x, t) psi_m (x, t) thin d x = \ integral e^(frac(i E_n t, planck.reduce)) psi_n^(\*) ( x, 0) e^(- frac(i E_m t, planck.reduce)) psi_m (x, 0) thin d x = \ e^(frac(i (E_n - E_m) t, planck.reduce)) delta_(n m)
+  integral psi_n^(*) (x, t) psi_m (x, t) thin d x = \ integral e^(frac(i E_n t, planck.reduce)) psi_n^(*) ( x, 0) e^(- frac(i E_m t, planck.reduce)) psi_m (x, 0) thin d x = \ e^(frac(i (E_n - E_m) t, planck.reduce)) delta_(n m)
 $
 
 Pero si $n = m$, el factor de fase es 1 y si $n eq.not m$, el producto interno sigue siendo 0, lo que implica que la ortogonalidad se conserva:
@@ -560,12 +568,12 @@ $
 
 Sabemos que:
 
-$ frac(d P, d t) = - m omega^2 X \, quad frac(d X, d t) = P / m $
+$ frac(d P, d t) = - m omega^2 X, quad frac(d X, d t) = P / m $
 
 Sustituimos:
 
 $
-  frac(d Q, d t) = \( - m omega^2 X \) sin omega t + P omega cos omega t - \ m omega (P / m) cos omega t + m omega^2 X sin omega t
+  frac(d Q, d t) = (- m omega^2 X) sin omega t + P omega cos omega t - \ m omega (P / m) cos omega t + m omega^2 X sin omega t
 $
 
 Simplificamos:
@@ -585,7 +593,7 @@ $ m frac(d^2, d t^2) angle.l x angle.r = - expval(frac(d V, d x)) $
 
 Usamos la ecuación de Heisenberg:
 
-$ frac(d, d t) angle.l x angle.r = frac(1, i planck.reduce) angle.l \[ x \, H \] angle.r = frac(expval(p), m) $
+$ frac(d, d t) angle.l x angle.r = frac(1, i planck.reduce) angle.l [x, H] angle.r = frac(expval(p), m) $
 
 Entonces:
 
@@ -614,7 +622,7 @@ Ehrenfest.
 A partir del operador de evolución temporal se deduce:
 
 $
-  i planck.reduce frac(partial, partial t) Psi \( x \, t \) = (- frac(planck.reduce^2, 2 m) nabla^2 + V \( x \)) Psi \( x \, t \)
+  i planck.reduce frac(partial, partial t) Psi(x, t) = (- frac(planck.reduce^2, 2 m) nabla^2 + V(x)) Psi(x, t)
 $
 
 Esta ecuación describe la evolución temporal de una función de onda en
@@ -631,13 +639,12 @@ $
 Con condiciones de frontera apropiadas, la energía se cuantiza.
 
 = Interpretación de la función de onda
-<interpretación-de-la-función-de-onda>
 - La densidad de probabilidad es
-  $rho \( x \, t \) = \| Psi \( x \, t \) \|^2$.
+  $rho(x, t) = | Psi(x, t)|^2$.
 
 - Se deduce la ecuación de continuidad:
 
-  $ frac(partial rho, partial t) + nabla dot.op j = 0 \, quad j = planck.reduce / m Im \( Psi^(\*) nabla Psi \) $
+  $ frac(partial rho, partial t) + nabla dot.op j = 0, quad j = planck.reduce / m Im(Psi^(*) nabla Psi) $
 
 - Se interpreta el flujo como relacionado con el gradiente de la fase de
   la onda.
@@ -646,25 +653,25 @@ Con condiciones de frontera apropiadas, la energía se cuantiza.
 
 Al escribir la onda como:
 
-$ Psi \( x \, t \) = sqrt(rho \( x \, t \)) e^(i S \( x \, t \) \/ planck.reduce) $
+$ Psi(x, t) = sqrt(rho(x, t)) e^(i S(x, t) / planck.reduce) $
 
 e introducirlo en la ecuación de Schrödinger, se obtiene que en el
 límite $planck.reduce arrow.r 0$ aparece la ecuación de
 Hamilton--Jacobi:
 
-$ frac(1, 2 m) \| nabla S \|^2 + V \( x \) + frac(partial S, partial t) = 0 $
+$ frac(1, 2 m) | nabla S |^2 + V (x) + frac(partial S, partial t) = 0 $
 
 = Potenciales constantes
 
 Agregar una constante $V_0$ al potencial cambia la fase global de la
 función de onda:
 
-$ Psi \( x \, t \) arrow.r e^(- i V_0 \( t - t_0 \) \/ planck.reduce) Psi \( x \, t \) $
+$ Psi(x, t) arrow.r e^(- i V_0 (t - t_0) / planck.reduce) Psi (x, t) $
 
 pero no altera los observables físicos. Esto es un ejemplo de una
 transformación gauge.
 
-= La gravedad en Mecánica Cuántica
+= La gravedad en Mecánica cuántica
 
 - La masa no desaparece de la ecuación de Schrödinger como lo hace en la
   clásica:
@@ -678,18 +685,17 @@ $ [- frac(planck.reduce^2, 2 m) nabla^2 + m Phi_g] Psi = i planck.reduce frac(pa
 - Bajo la transformación $A arrow.r A + nabla Lambda$, la función de
   onda se transforma:
 
-  $ Psi \( x \, t \) arrow.r e^(i e Lambda \( x \) \/ c) Psi \( x \, t \) $
+  $ Psi (x, t ) arrow.r e^(i e Lambda(x) / c) Psi(x, t) $
 
 - El momento canónico $p$ cambia, pero el momento cinético
-  $p - e A \/ c$ y los observables físicos no se alteran.
+  $p - e A / c$ y los observables físicos no se alteran.
 
 = Ejercicio 1
 Demostrar que la función de onda:
 
-$ Psi \( x \, t \) = A sin \( k x - omega t \) $
+$ Psi(x, t) = A sin(k x - omega t) $
 
-no es solución de la ecuación de Schrödinger dependiente del tiempo. La
-ecuación de Schrödinger dependiente del tiempo (en 1D y sin potencial)
+no es solución de la ecuación de Schrödinger dependiente del tiempo. La ecuación de Schrödinger dependiente del tiempo (en 1D y sin potencial)
 es:
 
 $ i planck.reduce frac(partial Psi, partial t) = - frac(planck.reduce^2, 2 m) frac(partial^2 Psi, partial x^2) $
@@ -697,7 +703,7 @@ $ i planck.reduce frac(partial Psi, partial t) = - frac(planck.reduce^2, 2 m) fr
 Calculamos ambas derivadas:
 
 $
-  frac(partial Psi, partial t) = - A omega cos \( k x - omega t \) arrow.r.double \ i planck.reduce frac(partial Psi, partial t) = - i planck.reduce A omega cos \( k x - omega t \)
+  frac(partial Psi, partial t) = - A omega cos(k x - omega t) arrow.r.double \ i planck.reduce frac(partial Psi, partial t) = - i planck.reduce A omega cos(k x - omega t)
 $
 
 $
@@ -735,8 +741,8 @@ infinito):
 
 $ 0 lt.eq x lt.eq L $
 
-Determinar los valores permitidos de energía. La ecuación de Schrödinger
-independiente del tiempo (sin potencial dentro del pozo) es:
+Determinar valores permitidos de energía. La ecuación de Schrödinger
+independiente del tiempo (sin potencial en el pozo) es:
 
 $
   - frac(planck.reduce^2, 2 m) frac(d^2 psi, d x^2) = E psi arrow.r.double \ frac(d^2 psi, d x^2) + k^2 psi = 0, quad k^2 = frac(2 m E, planck.reduce^2)
@@ -761,11 +767,7 @@ $
 $ E_n = frac(n^2 h^2, 8 m L^2), quad n = 1, 2, 3, dots $
 
 = Ejercicio 4
-Si $V(x)$ es una función par:
-
-$V(- x) = V(x)$
-
-demostrar que si $psi(x)$ es solución, entonces $psi(-x)$
+Si $V(x)$ es una función par: $V(- x) = V(x)$, demostrar que si $psi(x)$ es solución, entonces $psi(-x)$
 también lo es. La ecuación es:
 
 $- frac(planck.reduce^2, 2 m) frac(d^2 psi, d x^2) + V(x) psi(x) = E psi(x)$
@@ -783,6 +785,291 @@ $arrow.double psi(-x)$ también satisface la ecuación.
 Por tanto, se puede construir soluciones pares e impares:
 
 - $psi_(+) ( x) = 1 / 2 [psi(x) + psi(-x)]$ (par).
+
 - $psi_(-) (x) = 1 / 2 [psi (x) - psi(-x)]$ (impar).
 
 Ambas son también soluciones.
+
+
+
+
+#align(center)[*Tema 7: Momento angular*]
+
+= Rotaciones y conmutación
+- Rotaciones respecto a ejes distintos no conmutan.
+
+- Esta propiedad se traslada a los operadores cuánticos de rotación, que generan relaciones de conmutación del momento angular: $[J_i, J_j] = i hbar epsilon.alt_(i j k) J_k$.
+
+= Rotaciones infinitesimales
+- Se define un operador unitario asociado a rotaciones: $D(R) = 1 - i G d phi.alt$
+
+- El momento angular es generador hermítico de estas rotaciones: $G = J_k / hbar$
+
+- Las rotaciones forman un grupo no abeliano, a diferencia de las
+  traslaciones.
+
+= Rotaciones del espín 1/2
+- Operadores de espín en base de $S_z$: $S_z = hbar / 2(ket(+) bra(+) - ket(-) bra(-))$.
+
+- Al rotar un espín $1 slash 2$, sus valores esperados giran como vectores clásicos.
+
+- Una rotación de $2 pi$ cambia el signo del ket: $ket(alpha)_(R(2 pi)) = - ket(alpha)$
+
+= Precesión del Espín
+
+En un campo magnético, el espín precesa según:
+
+$ ket(S_x)_t = expval(S_x)_0 cos(omega t) - expval(S_y)_0 sin(omega t) $
+
+$ expval(S_z)_t = expval(S_z)_0 $
+
+= Formalismo de Pauli
+
+- Se utilizan matrices $2 times 2$ para describir espinores:
+
+  $
+    sigma_1 = mat(delim: "(", 0, 1; 1, 0), quad sigma_2 = mat(delim: "(", 0, - i; i, 0), quad sigma_3 = mat(delim: "(", 1, 0; 0, - 1)
+  $
+
+
+- Hermiticidad: $sigma_j^dagger = sigma_j$
+
+- Conmutación: $[sigma_i, sigma_j] = 2 i epsilon.alt_(i j k) sigma_k$
+- Anticonmutación: ${sigma_i, sigma_j} = 2 delta_(i j)$
+
+= Ejercicio 1
+Comprobar que ${sigma_i, sigma_j} = 2 delta_(i j)^(**)$. Este es el anticonmutador de las matrices de Pauli. Se define: ${ sigma_i, sigma_j } = sigma_i sigma_j + sigma_j sigma_i$. Casos:
+
+- $i = j$: ${ sigma_i, sigma_i } = sigma_i^2 + sigma_i^2 = 2 sigma_i^2 = 2 I$.
+
+- $i eq.not j$, se sabe que las matrices de Pauli anticommutan:
+$ sigma_i sigma_j + sigma_j sigma_i = 0 $
+$ {sigma_i, sigma_j} = 2 delta_(i j) I $
+
+= Ejercicio 2
+Comprobar que las matrices de Pauli son hermíticas. Una matriz es
+hermítica si $sigma^+ = sigma$ (conjugada transpuesta = original).
+Veamos cada una:
+
+- $sigma_1 = mat(delim: "(", 0, 1; 1, 0) arrow.r.double sigma_1^+ = sigma_1$.
+
+- $sigma_2 = mat(delim: "(", 0, - i; i, 0) arrow.r.double sigma_2^dagger = mat(delim: "(", 0, i; - i, 0) = sigma_2$.
+- $sigma_3 = mat(delim: "(", 1, 0; 0, - 1) arrow.r.double sigma_3^+ = sigma_3$
+
+Todas las matrices de Pauli son hermíticas.
+
+= Ejercicio 3
+Determinante y traza de las matrices de Pauli:
+
+- $det(sigma_1) = det(sigma_2) = det(sigma_3) = - 1$
+
+- $upright("Tr")(sigma_1) = upright("Tr")(sigma_2) = upright("Tr")(sigma_3) = 0$
+
+= Ejercicio 4
+Demostrar que:
+$(sigma dot.op a)(sigma dot.op b) = a dot.op b + i sigma dot.op(a times b)$, con:
+
+- $sigma dot.op a = sum_k a_k sigma_k$
+
+- $sigma_i sigma_j = delta_(i j) I + i epsilon.alt_(i j k) sigma_k$
+
+Entonces:
+
+$
+  (sigma dot.op a)(sigma dot.op b) = sum_(i, j) a_i b_j sigma_i sigma_j = \ sum_(i, j) a_i b_j(delta_(i j) I + i epsilon.alt_(i j k) sigma_k)
+$
+
+Agrupando:
+
+$ = sum_i a_i b_i I + i sum_(i, j, k) a_i b_j epsilon.alt_(i j k) sigma_k $
+
+$ = (a dot.op b) I + i sigma dot.op(a times b) $
+
+= Ejercicio 5
+Si $a$ tiene componentes reales, demostrar que: $(sigma dot.op a)^2 = | a |^2 I$:
+
+$ (sigma dot.op a)^2 = (sum_i a_i sigma_i)^2 $
+
+Usamos:
+
+$ sigma_i sigma_j = delta_(i j) I + i epsilon.alt_(i j k) sigma_k $
+
+$
+  arrow.r.double(sigma dot.op a)^2 = sum_(i, j) a_i a_j(delta_(i j) I + i epsilon.alt_(i j k) sigma_k) = \ sum_i a_i^2 I + upright("(términos con ") epsilon.alt_(i j k))
+$
+
+Pero $a_i a_j epsilon.alt_(i j k) = 0$ si $a_i, a_j$ son reales
+(producto simétrico con antisimétrico). Entonces:
+$( sigma dot.op a)^2 = ( a_1^2 + a_2^2 + a_3^2) I = | a |^2 I$.
+
+
+
+
+#align(center)[*Tema 8: Perturbaciones dependientes del tiempo*]
+
+
+= Sistemas de dos niveles
+
+- Se estudia un sistema con dos estados $psi_a$ y $psi_b$, con energías
+  $E_a$ y $E_b$.
+
+- Un estado general es una combinación:
+
+  $ Psi(t) = c_a(t) psi_a e^(- i E_a t / planck.reduce) + c_b(t) psi_b e^(- i E_b t / planck.reduce) $
+
+- Al aplicar el hamiltoniano perturbado $H'(t)$, se obtienen
+  ecuaciones para los coeficientes temporales:
+
+  $ dot(c)_a = - i / planck.reduce(H'_(a a) c_a + H'_(a b) e^(- i omega_0 t) c_b) $
+
+  $ dot(c)_b = - i / planck.reduce(H'_(b b) c_b + H'_(b a) e^(i omega_0 t) c_a) $
+
+  Donde $omega_0 = frac(E_b - E_a, planck.reduce)$.
+
+= Perturbación dependiente del tiempo
+
+Si la perturbación es pequeña, se resuelven las ecuaciones anteriores por aproximaciones sucesivas:
+
+- Orden 0: $c_a^(( 0)) = 1, c_b^((0)) = 0$
+
+- Orden 1:
+
+  $ c_b^((1))(t) = - i / planck.reduce integral_0^t H'_(b a)(t') e^(i omega_0 t') d t' $
+
+- Orden 2 y superiores se obtienen introduciendo las soluciones previas
+  en las ecuaciones.
+
+= Perturbaciones senoidales
+
+- Se considera una perturbación senoidal:
+
+  $ H'(r, t) = V(r) cos(omega t) $
+
+  $ H'_(a b) (t) = V_(a b) cos(omega t) $
+
+- A primer orden:
+
+  $
+    c_b(t) = - frac(i V_(b a), 2 planck.reduce) (frac(e^(i( omega_0 + omega) t) - 1, omega_0 + omega) + frac(e^(i( omega_0 - omega) t) - 1, omega_0 - omega))
+  $
+
+- Si $omega approx omega_0$, el segundo término domina y se obtiene:
+
+  $
+    P_(a arrow.r b)(t) = lr(|c_b(t)|)^2 approx frac(|V_(a b)|^2, planck.reduce^2) frac(sin^2 [(omega_0 - omega) t / 2], (omega_0 - omega)^2)
+  $
+
+Esto describe resonancia: la probabilidad de transición es máxima cuando
+la frecuencia de la perturbación coincide con la frecuencia de
+transición del sistema
+
+= Ejercicio 1
+Una onda electromagnética tiene campo eléctrico:
+$ arrow(E)(t) = E_0 cos (omega t) thin hat(z) $
+
++ Hallar el hamiltoniano de un átomo en este campo.
+
++ Expresarlo en términos del momento dipolar eléctrico.
++ Demostrar que el elemento de matriz diagonal del $H$
+  perturbado es cero.
+
+Cuando un átomo está en un campo eléctrico externo, su interacción se
+describe por:
+
+$ H'(t) = - arrow(p) dot.op arrow(E)(t) $
+
+Donde $arrow(p)$ es el momento dipolar eléctrico del átomo. Como el campo es $arrow(E)(t) = E_0 cos(omega t) thin hat(z)$,
+tenemos:
+
+$ H'(t) = - p_z E_0 cos(omega t) $
+
+En términos de $arrow(p)$, el hamiltoniano queda:
+$ H'(t) = - E_0 cos(omega t) thin arrow(p) dot.op hat(z) $
+
+O simplemente:
+
+$ H'(t) = - E_0 cos(omega t) thin p_z $
+
+Elemento de matriz diagonal $angle.l psi_a |H'| psi_a angle.r$. Sea
+$H'_(a a)(t) = mel(psi_a, H'(t), psi_a)$.
+Sustituyendo:
+$ H'_(a a)(t) = - E_0 cos(omega t) mel(psi_a, p_z, psi_a) $
+
+Si $psi_a$ es un estado con paridad definida y $p_z$ es un operador
+impar (porque es una coordenada), entonces:
+
+$ angle.l psi_a | p_z | psi_a angle.r = 0 $
+
+$ H'_(a a) (t) = 0 $
+
+= Ejercicio 2
+Con el hamiltoniano del ejercicio 1, demostrar que la probabilidad de transición es:
+$
+  P_(a arrow.r b)(t) = (frac(|p| E_0, planck.reduce))^2 frac(sin^2 [(omega_0 - omega) t / 2], (omega_0 - omega)^2)
+$
+
+A primer orden, si:
+
+$ H'(t) = - p_z E_0 cos(omega t) arrow.r.double H'_(b a)(t) = \ - p_(b a) E_0 cos(omega t) $
+
+Entonces:
+$ c_b(t) = - i / planck.reduce integral_0^t H'_(b a)(t') e^(i omega_0 t') d t' $
+
+Sustituyendo:
+
+$ c_b(t) = frac(i p_(b a) E_0, planck.reduce) integral_0^t cos(omega t') e^(i omega_0 t') d t' $
+
+Descomponemos el coseno:
+
+$ cos(omega t') = 1 / 2( e^(i omega t') + e^(- i omega t')) $
+
+$
+  arrow.r.double c_b(t) = frac(i p_(b a) E_0, 2 planck.reduce) integral_0^t(e^(i( omega_0 + omega) t') + e^(i( omega_0 - omega) t')) d t'
+$
+
+$
+  = frac(i p_(b a) E_0, 2 planck.reduce) (frac(e^(i( omega_0 + omega) t) - 1, i( omega_0 + omega)) + frac(e^(i( omega_0 - omega) t) - 1, i( omega_0 - omega)))
+$
+
+Despreciando el primer término:
+
+$
+  c_b(t) approx frac(p_(b a) E_0, 2 planck.reduce) dot.op frac(e^(i( omega_0 - omega) t) - 1, omega_0 - omega)
+$
+
+$
+  arrow.r.double |c_b (t)|^2 = (frac(| p_(b a) | E_0, 2 planck.reduce))^2 frac(4 sin^2 [( omega_0 - omega) t / 2], (omega_0 - omega)^2)
+$
+
+$
+  P_(a arrow.r b)(t) = (frac(| p_(b a) | E_0, planck.reduce))^2 frac(sin^2 [( omega_0 - omega) t / 2], ( omega_0 - omega)^2)
+$
+
+= Ejercicio 3
+Regla de oro de Fermi:
+$ R = frac(2 pi, planck.reduce) | H'_(s n) |^2 rho ( E_n) $
+
+Se parte del resultado general de probabilidad de transición
+$P_(a arrow.r b) (t)$, cuando el sistema tiene muchos estados
+finales $ket(n)$ y una perturbación estacionaria. Si la
+perturbación es pequeña y constante durante un tiempo $t$, la
+probabilidad de transición es:
+
+$
+  P_(s n) (t) = frac(| H'_(s n) |^2, planck.reduce^2) frac(sin^2 [( E_n - E_s ) t / (2 planck.reduce)], [( E_n - E_s) / 2 planck.reduce]^2)
+$
+
+A largo plazo, esta función se vuelve una $delta$:
+
+$ lim_(t arrow.r oo) frac(sin^2(x t), x^2) prop t dot.op delta(x) $
+
+Entonces, la tasa de transición es:
+
+$ R = frac(d P, d t) = frac(2 pi, planck.reduce) |H'_(s n)|^2 rho (E_n) $
+
+Donde:
+
+- $H'_(s n) = mel(n, H', s)$ es el elemento de matriz de
+  la perturbación.
+
+- $rho(E_n)$ es la densidad de estados finales a la energía $E_n$.
