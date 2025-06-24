@@ -1,7 +1,7 @@
 #import "@preview/physica:0.9.5": *
 #show: super-plus-as-dagger
 
-#import "@preview/unify:0.7.1": num, qty, numrange, qtyrange, unit
+#import "@preview/unify:0.7.1": num, numrange, qty, qtyrange, unit
 
 // Meta data
 #set document(title: "Resumen de Física Cuántica II (Unir Física)", author: "Alberto Corbi")
@@ -9,25 +9,17 @@
 #let headcolor = rgb("004225")
 
 // Margin and footer
-#set page(
-  margin: 0.3in,
-  paper: "a4",
-  footer: context {
-    if counter(page).display() == "2" {
-      grid(
-        columns: (1fr, 1fr),
-        [],
-        block(
-          inset: 4pt,
-          stroke: (top: headcolor),
-          text(headcolor)[UNIR Física #h(1fr) #datetime.today().display()],
-        ),
-      )
-    } else {
-      []
-    }
-  },
-)
+#set page(margin: 0.3in, paper: "a4", footer: context {
+  if counter(page).display() == "2" {
+    grid(
+      columns: (1fr, 1fr),
+      [],
+      block(inset: 4pt, stroke: (top: headcolor), text(headcolor)[UNIR Física #h(1fr) #datetime.today().display()]),
+    )
+  } else {
+    []
+  }
+})
 
 #let normalsize = 10pt
 #let large = 18pt
@@ -45,12 +37,9 @@
 
 #show: rest => columns(3, rest, gutter: .4cm)
 
-#align(
-  center,
-  link("https://bit.ly/unirfiscuantica2")[
-    #text(large, headcolor)[#context document.title]
-  ],
-)
+#align(center, link("https://bit.ly/unirfiscuantica2")[
+  #text(large, headcolor)[#context document.title]
+])
 
 #image("logo resumen cuantica ii.png")
 
@@ -1073,3 +1062,113 @@ Donde:
   la perturbación.
 
 - $rho(E_n)$ es la densidad de estados finales a la energía $E_n$.
+
+
+#align(center)[*Tema 9: Dispersión*]
+
+
+= Teoría clásica de la dispersión
+- Se considera un proyectil que incide sobre un blanco con simetría
+  axial.
+- Se define la sección eficaz diferencial
+  $D (theta) = frac(d sigma, d Omega)$, que mide la probabilidad de
+  dispersión en un ángulo sólido.
+- La sección eficaz total se obtiene integrando sobre todos los ángulos
+  sólidos.
+- Se introduce el concepto de luminosidad para conectar con datos
+  experimentales.
+
+= Teoría cuántica de la dispersión
+- Se modela el haz incidente como una onda plana que, al interactuar con un potencial, da lugar a una onda esférica dispersada.
+
+- La función de onda asintótica es:
+
+  $ psi(r, theta) approx A e^(i k z) + f( theta) e^(i k r) / r $
+
+- La sección eficaz diferencial es proporcional al módulo cuadrado de la amplitud de dispersión: $D(theta) = abs(f(theta))^2$
+
+= Análisis de ondas parciales
+- Se resuelve la ecuación de Schrödinger usando separación de variables y coordenadas esféricas.
+
+- La función de onda se expresa como suma de modos angulares (ondas
+  parciales) con coeficientes $a_l$.
+
+- Para grandes distancias, se obtiene una forma explícita de la onda dispersada y de $f (theta)$.
+
+- Se introduce el desfasaje $delta_l$ que relaciona los $a_l$ mediante:
+
+  $ a_l = 1 / k e^(i delta_l) sin delta_l $
+
+- La sección eficaz total se obtiene como:
+  $ sigma = frac(4 pi, k^2) sum_l( 2 l + 1) sin^2 delta_l $
+
+= Aproximación de Born
+<aproximación-de-born>
+- Se linealiza la ecuación de Schrödinger mediante la función de Green.
+
+- Se obtiene una solución integral formal de la función de onda.
+
+- En la primera aproximación de Born, se sustituye la función de onda
+  por la onda incidente:
+
+  $
+    f(theta) approx - frac(m, 2 pi planck.reduce^2) integral e^(i( arrow(k') - arrow(k)) dot.op arrow(r)) V( arrow(r)) d^3 r
+  $
+
+- Para potenciales esféricos, se simplifica aún más.
+
+= Ejercicio 1
+Dispersión cuántica por una esfera de potencial infinito. Se da el
+siguiente potencial:
+$ V(r) = cases(delim: "{", oo quad r lt.eq a, 0 quad r > a) $
+
+Usar la condición $k a lt.double 1$, es decir, longitudes de onda grandes comparadas con el tamaño de la esfera. Calcular la sección
+eficaz total $sigma$. Este potencial representa una esfera impenetrable,
+por lo que las partículas _rebotan_ al llegar a $r = a$. A bajas energías, solo contribuye el modo s ($l = 0$) del análisis de ondas
+parciales.
+
+- El desfasaje $delta_0$ para $l = 0$ cuando $k a lt.double 1$ es conocido:
+
+  $ delta_0 approx - k a $
+
+- La sección eficaz total es:
+
+  $ sigma = frac(4 pi, k^2) sum_(l = 0)^oo (2 l + 1) sin^2(delta_l) $
+
+Como solo $l = 0$ contribuye:
+
+$ sigma approx frac(4 pi, k^2) sin^2(delta_0) approx frac(4 pi, k^2)(k^2 a^2) = 4 pi a^2 $
+
+= Ejercicio 2
+Amplitud de dispersión para el potencial de Yukawa. Se da:
+$ V(r) = frac(beta e^(- mu r), r) $
+
+Calcular la amplitud de dispersión $f(theta)$ en la aproximación de
+Born. Recordemos la fórmula de la 1ª aproximación de Born:
+$ f(theta) = - frac(2 m, planck.reduce^2) frac(1, q^2 + mu^2) quad upright("donde ") q = 2 k sin (theta / 2) $
+
+El resultado de la integral de Fourier para un potencial de Yukawa da
+directamente este resultado.
+
+$ f(theta) = - frac(2 m beta, planck.reduce^2(mu^2 + kappa^2)), quad kappa = 2 k sin (theta / 2) $
+
+= Ejercicio 3
+Dispersión de Rutherford. Usamos el resultado anterior y tomamos:
+
+- $beta = frac(q_1 q_2, 4 pi epsilon.alt_0)$
+- $mu = 0$ (potencial de Coulomb)
+
+Calcular la sección eficaz diferencial $frac(d sigma, d Omega)$. Se
+tiene:
+
+$ f(theta) = - frac(2 m, planck.reduce^2) dot.op frac(q_1 q_2, 4 pi epsilon.alt_0 kappa^2) $
+
+Entonces:
+
+$
+  frac(d sigma, d Omega) = abs(f (theta))^2 = (frac(2 m, planck.reduce^2) dot.op frac(q_1 q_2, 4 pi epsilon.alt_0 kappa^2))^2
+$
+
+Recordando que $kappa = 2 k sin (theta / 2)$, y que $E = frac(planck.reduce^2 k^2, 2 m)$, se puede reescribir en términos de $E$:
+
+$ frac(d sigma, d Omega) = (frac(q_1 q_2, 16 pi E sin^2(theta/2)))^2 $
