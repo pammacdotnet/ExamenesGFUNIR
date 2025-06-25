@@ -1172,3 +1172,113 @@ $
 Recordando que $kappa = 2 k sin (theta / 2)$, y que $E = frac(planck.reduce^2 k^2, 2 m)$, se puede reescribir en términos de $E$:
 
 $ frac(d sigma, d Omega) = (frac(q_1 q_2, 16 pi E sin^2(theta/2)))^2 $
+
+
+
+
+#align(center)[*Tema 10: La ecuación de Dirac*]
+
+= La ecuación de Dirac
+- Parte de la ecuación relativista de energía: $E^2 - p^2 c^2 = m^2 c^4$
+
+- La ecuación de Klein-Gordon fue una primera aproximación relativista,
+  válida para partículas sin espín (espín 0), pero no adecuada para
+  interpretar probabilidades.
+
+- Dirac buscó una ecuación lineal en derivadas temporales y espaciales →
+  propuso factorizar la relación de energía.
+
+- Introdujo matrices gamma ($gamma mu$), que deben cumplir:
+  ${ gamma^mu \, gamma^nu } = 2 g^(mu nu)$
+
+- Las matrices gamma son de 4×4 y están relacionadas con las matrices de
+  Pauli.
+
+- Así se llega a la ecuación de Dirac:
+
+  $ i planck.reduce gamma^mu partial_mu psi - m c psi = 0 $
+
+- La función de onda $psi$ es un espinor de Dirac, con 4 componentes.
+
+= Soluciones a la ecuación de Dirac
+<soluciones-a-la-ecuación-de-dirac>
+- Para una partícula libre en reposo ($p = 0$), se obtiene una solución
+  con dos componentes, una con energía positiva y otra con energía
+  negativa.
+- La aparición de energías negativas llevó a Dirac a postular un “mar de
+  electrones”, pero hoy se interpreta como la existencia de
+  antipartículas (por ejemplo, el positrón).
+
+= Ejercicio 1
+<ejercicio-1>
+Suponiendo una onda plana:
+
+$ psi \( r \, t \) = a e^(- i / planck.reduce \( E t - arrow(p) dot.op arrow(r) \)) u \( E \, arrow(p) \) $
+
+Demuestra que la ecuación de Dirac en el espacio de momentos es:
+
+$ \( gamma^mu p_mu - m c \) u = 0 $
+
+Sustituyendo la onda plana en la ecuación de Dirac:
+$
+  \( i planck.reduce gamma^mu partial_mu - m c \) psi = 0 arrow.r.double gamma^mu p_mu u = m c u arrow.r.double \( gamma^mu p_mu - m c \) u = 0
+$
+
+= Ejercicio 2
+Calcular la cantidad $gamma^mu p_mu$. Usando la
+representación estándar:
+$ gamma^0 = mat(delim: "(", I, 0; 0, - I;) \, quad gamma^i = mat(delim: "(", 0, sigma^i; - sigma^i, 0;) $
+
+Entonces:
+
+$
+  gamma^mu p_mu = gamma^0 E / c - gamma^i p_i = mat(delim: "(", E / c, - arrow(p) dot.op arrow(sigma); arrow(p) dot.op arrow(sigma), - E / c;)
+$
+
+
+= Ejercicio 3
+<ejercicio-3>
+Demostrar que $( arrow(p) dot.op arrow(sigma))^2 = arrow(p)^2$:
+
+$
+  ( arrow(p) dot.op arrow(sigma) )^2 = sum_(i, j) p_i p_j sigma_i sigma_j = sum_i p_i^2 I + sum_(i eq.not j) p_i p_j sigma_i sigma_j
+$
+
+Pero:
+
+$ sigma_i sigma_j = delta_(i j) I + i epsilon.alt_(i j k) sigma_k arrow.r.double $
+
+La parte no diagonal se anula al hacer la traza. Entonces:
+
+$
+  ( arrow(p) dot.op arrow(sigma) )^2 = arrow(p)^2 I arrow.r.double upright("como operadores: ") ( arrow(p) dot.op arrow(sigma) )^2 = arrow(p)^2
+$
+
+
+= Ejercicio 4
+<ejercicio-4>
+Demostrar que la ecuación de Dirac en el espacio de momentos implica la
+relación relativista:
+
+$ E^2 - m^2 c^4 = arrow(p)^2 c^2 $
+
+$ \( gamma^mu p_mu - m c \) \( gamma^nu p_nu + m c \) = gamma^mu gamma^nu p_mu p_nu - m^2 c^2 $
+
+Utilizando:
+
+$ { gamma^mu \, gamma^nu } = 2 g^(mu nu) arrow.r.double gamma^mu gamma^nu p_mu p_nu = g^(mu nu) p_mu p_nu = p^mu p_mu $
+
+Entonces:
+
+$ p^mu p_mu = E^2 / c^2 - arrow(p)^2 = m^2 c^2 arrow.r.double E^2 = m^2 c^4 + arrow(p)^2 c^2 $
+
+
+= Ejercicio 5
+Sea $gamma^5 = i gamma^0 gamma^1 gamma^2 gamma^3$. Demostrar que:
+
+$ { gamma^mu \, gamma^5 } = 0 $
+
+Por definición, $gamma^5$ anticommuta con todos los $gamma^mu$:
+$
+  gamma^mu gamma^5 + gamma^5 gamma^mu = 0 quad upright("para todo ") mu = 0 \, 1 \, 2 \, 3 arrow.r.double { gamma^mu \, gamma^5 } = 0
+$
