@@ -59,7 +59,7 @@ magnetostático $arrow(H)$. #strong[(2 pts)]
     el rotacional en cartesianas, tenemos para el vector campo
     $arrow(A)_1$ que: $nabla dot.op arrow(A)_1 = 2 y - 2$ y
     $nabla times arrow(A)_1 = 0$ y para el vector campo $arrow(A)_2$:
-    $nabla dot.op arrow(A)_2 = 0$ y $nabla times arrow(A)_2 = z^2 - y^2$.
+    $nabla dot.op arrow(A)_2 = 0$ y $nabla times arrow(A)_2 = z^2 + y^2$.
     En conclusión el vector campo $arrow(A)_1$ es el campo eléctrico y
     $arrow(A)_2$ es el campo magnético.] \
   #strong[A priori, no sería necesario hacer la comprobación del vector
@@ -95,7 +95,7 @@ atenuación y fase del agua de mar. Calcular:
   $ frac(sigma^2, omega^2 med epsilon^2) $
 
   #strong[y ver si es mucho mayor que 1 o igual que 1 o menor que 1. En
-    función de ese parámetroy haciendo uso de las expresiones del
+    función de ese parámetr oy haciendo uso de las expresiones del
     formulario, determinar el tipo de material y ver si es posible
     realizar las aproximaciones adecuadas. En concreto para los datos que
     aquí figuran si es posible y por tanto:]
@@ -122,11 +122,7 @@ en el que existe un campo vertical uniforme $E_0$. Calcular el potencial
 eléctrico en un punto $P \( r \, theta \, phi.alt \)$. #strong[(2 pts)]
 \
 
-#figure(
-  image("electro II 2 ejercicio 4.png", width: 50.0%),
-  caption: [
-  ],
-)
+#figure(image("electro II 2 ejercicio 4.png", width: 50.0%))
 
 #strong[Aplicaremos el principio de superposición, por lo que se calcula
   primero el potencial electrostático como si fuera una carga puntual y
@@ -138,12 +134,12 @@ $ V \( r \, theta \) = frac(q, 4 med pi med epsilon_0 med r) $
 #strong[En el caso de una esfera conductora, se aplicará el método de
   separación de variables:]
 $
-  V \( r \, theta \, phi.alt \) = sum_n^(+ oo) \[ A_n r^n + B_n r^(\( n + 1 \)) \] med P_n^m \( mu \) med \[ A_m med cos \( m med phi.alt \) + B_m med sin \( m med phi.alt \) \]
+  V \( r \, theta \, phi.alt \) = sum_n^(+ oo) \[ A_n r^n + B_n r^(- \( n + 1 \)) \] med P_n^m \( mu \) med \[ A_m med cos \( m med phi.alt \) + B_m med sin \( m med phi.alt \) \]
 $
 
 #strong[debido a la simetría del sistema, el potencial no dependerá de
   $phi.alt$, luego:]
-$ V \( r \, theta \, phi.alt \) = sum_n^(+ oo) \[ A_n r^n + B_n r^(\( n + 1 \)) \] med P_n^m \( mu \) $
+$ V \( r \, theta \, phi.alt \) = sum_n^(+ oo) \[ A_n r^n + B_n r^(- \( n + 1 \)) \] med P_n^m \( mu \) $
 
 #strong[Como la esfera está en un campo uniforme, el potencial generado
   por el campo será]
@@ -161,7 +157,7 @@ $ A_1 = - E_0 ; med med med A_n = 0 med upright("si") med \( n gt.eq 2 \) $
 #strong[y podemos escribir el potencial electrostático de la forma:]
 
 $
-  V \( r \, theta \) = - E_0 med r med cos \( theta \) + sum_n^(+ oo) med B_n med r^(\( n + 1 \)) med P_n \( cos \( theta \) \)
+  V \( r \, theta \) = - E_0 med r med cos \( theta \) + sum_n^(+ oo) med B_n med r^(- \( n + 1 \)) med P_n \( cos \( theta \) \)
 $
 
 #strong[para $r = a$, estamos en la superficie de la esfera y por tanto
@@ -185,16 +181,12 @@ $
 En el circuito de la figura, determinar el equivalente de Thévenin
 entre los terminales $A$ y $B$. #strong[(2 pts)]
 
-#figure(
-  image("electro II 2 ejercicio 5.png", width: 65.0%),
-  caption: [
-  ],
-)
+#figure(image("electro II 2 ejercicio 5.drawio.svg", width: 65.0%))
 
 #strong[Para la resolución de este circuito, en primer lugar debemos
   sustituir el generador de corriente $10 med upright(A)$ en paralelo con
   la resistencia $1 med upright(Omega)$, por un generador de tensión de
-  $20 med upright(V)$ en serie con la resistencia $1 med upright(Omega)$.]
+  $10 med upright(V)$ en serie con la resistencia $1 med upright(Omega)$.]
 \
 #strong[Ahora tendremos un circuito con dos mallas, la primera es donde
   esta el generador de tensión de $60 med upright(V)$, donde por
