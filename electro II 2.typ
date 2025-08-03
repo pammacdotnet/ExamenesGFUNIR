@@ -122,7 +122,7 @@ en el que existe un campo vertical uniforme $E_0$. Calcular el potencial
 eléctrico en un punto $P \( r \, theta \, phi.alt \)$. #strong[(2 pts)]
 \
 
-#figure(image("electro II 2 ejercicio 4.png", width: 50.0%))
+#figure(image("electro II 2 ejercicio 4.drawio.svg", width: 50.0%))
 
 #strong[Aplicaremos el principio de superposición, por lo que se calcula
   primero el potencial electrostático como si fuera una carga puntual y
