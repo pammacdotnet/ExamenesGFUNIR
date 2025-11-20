@@ -1,6 +1,6 @@
 
 #import "@preview/typsium:0.2.0": ce
-#import "@preview/unify:0.7.1": num, qty, numrange, qtyrange, unit
+#import "@preview/unify:0.7.1": num, numrange, qty, qtyrange, unit
 #import "@preview/gentle-clues:1.2.0": *
 
 #set text(font: "Comic Neue", size: 18pt, lang: "es")
@@ -125,7 +125,7 @@ Se tienen dos cargas puntuales: $q_1 = #qty(5, "nano coulomb")$ en el punto de c
 
 Se pide:
 - Hacer un esquema de las cargas y dibujar el vector campo eléctrico en los puntos de coordenadas $(-a, a)$ y $(a, -a)$.
-- Sabiendo que en el punto $(-a, a)$ una carga $q_0 = #qty(4, "nano coulomb")$ experimenta una fuerza dada por $ F = - #num("5e-9") hat(i) - #num("5e-9") hat(j) thin #unit("newton")$, determinar el valor de a.
+- Sabiendo que en el punto $(-a, a)$ una carga $q_0 = #qty(4, "nano coulomb")$ experimenta una fuerza dada por $F = - #num("5e-9") hat(i) - #num("5e-9") hat(j) thin #unit("newton")$, determinar el valor de a.
 - Calcular el potencial creado por $q_1$ y $q_2$ en los puntos $(0, 0)$ y $(a, 0)$, tomando como valor de $a$ el calculado en el apartado anterior.
 
 =
