@@ -14,6 +14,6 @@
   + ¿Qué altura alcanza la bala?
   + ¿Cuánto tiempo está en el aire?
   + ¿Cuál es el alcance horizontal?
-Responda justificando sus respuestas.
+  + Responda justificando sus respuestas.
 
 + Considerando un cohete con una carga útil de masa ($M_0$) que se propulsa a una velocidad ($v$) por la eyección de gases, determine el instante y las condiciones en que alcanza la velocidad máxima en ausencia de fuerzas externas (es decir, se mueve fuera del campo gravitatorio terrestre). Considere que la masa inicial de gases es ($M$). ¿Cómo se vería afectada la expresión general de la velocidad del cohete en el caso de que el cohete se mueva próximo a la superficie terrestre? Justifique sus respuestas.
