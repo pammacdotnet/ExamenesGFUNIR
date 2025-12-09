@@ -1,0 +1,221 @@
+\documentclass[a4paper,10pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{csquotes}
+
+% Configuración de listas y títulos
+\setlist{nosep}
+\titlespacing{\section}{0pt}{1pt}{1pt}
+\setlist[enumerate]{leftmargin=*, topsep=1pt, itemsep=2pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% Encabezado
+\begin{center}
+    {\large \textbf{SIMULACRO DE EXAMEN: TELEDETECCIÓN Y PROCESADO DE IMÁGENES}}\\
+\end{center}
+
+\begin{multicols*}{2}
+
+% ---------------------------
+% PARTE I: TEST
+% ---------------------------
+
+\section*{I. Teoría (4 ptos) - 0.4 c/u}
+\textit{\footnotesize Seleccione la respuesta única correcta.}
+
+\begin{enumerate}
+
+    % TEMA 1: Modalidades / Introducción
+    \item \textbf{¿Cuál de las siguientes modalidades de imagen médica utiliza un radiofármaco inyectado en el paciente para obtener información funcional o metabólica?}
+    \begin{enumerate}[label=\alph*)]
+        \item Resonancia Magnética (RM).
+        \item Tomografía Computarizada (TC).
+        \item Tomografía por Emisión de Positrones (PET).
+        \item Radiografía Simple.
+    \end{enumerate}
+
+    % TEMA 1: Calidad de imagen
+    \item \textbf{El \textquote{Efecto de Volumen Parcial} ocurre cuando:}
+    \begin{enumerate}[label=\alph*)]
+        \item El paciente se mueve durante la adquisición.
+        \item Un vóxel contiene tejidos diferentes y su intensidad es un promedio de ellos.
+        \item Hay objetos metálicos dentro del campo de visión.
+        \item La relación señal a ruido es demasiado baja.
+    \end{enumerate}
+
+    % TEMA 2: Histograma / Transformaciones
+    \item \textbf{¿Qué transformación de intensidad utilizaría para redistribuir los niveles de gris de una imagen oscura y aprovechar todo el rango dinámico disponible?}
+    \begin{enumerate}[label=\alph*)]
+        \item Umbralización binaria.
+        \item Inversión de color (negativo).
+        \item Ecualización del histograma.
+        \item Filtro de mediana.
+    \end{enumerate}
+
+    % TEMA 2: Filtros / Espacio-Frecuencia
+    \item \textbf{El filtro de \textquote{Difusión Anisotrópica} se caracteriza principalmente por:}
+    \begin{enumerate}[label=\alph*)]
+        \item Suavizar la imagen preservando los bordes.
+        \item Eliminar únicamente el ruido impulsivo ("sal y pimienta").
+        \item Aumentar el ruido para resaltar texturas.
+        \item Ser un filtro lineal equivalente al filtro de media.
+    \end{enumerate}
+
+    % TEMA 3: Transformaciones Geométricas
+    \item \textbf{En una transformación geométrica, ¿qué operación modifica la forma de la imagen convirtiendo un cuadrado en un paralelogramo (sesgo)?}
+    \begin{enumerate}[label=\alph*)]
+        \item Traslación.
+        \item Cizallamiento (Shear).
+        \item Rotación.
+        \item Escalado.
+    \end{enumerate}
+
+    % TEMA 3: Registro
+    \item \textbf{¿Qué diferencia principal existe entre un registro rígido y un registro afín?}
+    \begin{enumerate}[label=\alph*)]
+        \item El registro afín permite deformaciones locales elásticas.
+        \item El registro rígido solo permite rotación y traslación; el afín añade escalado y cizallamiento.
+        \item El registro rígido tiene más grados de libertad que el afín.
+        \item No hay diferencia, son sinónimos.
+    \end{enumerate}
+
+    % TEMA 4: Segmentación (Umbralización)
+    \item \textbf{El método de Otsu para la umbralización automática busca el umbral óptimo que:}
+    \begin{enumerate}[label=\alph*)]
+        \item Minimiza la varianza inter-clase.
+        \item Maximiza la varianza inter-clase (o minimiza la intra-clase).
+        \item Selecciona siempre el valor medio del histograma (ej. 128).
+        \item Elimina los píxeles conectados al borde de la imagen.
+    \end{enumerate}
+
+    % TEMA 4: Segmentación (Contornos Activos)
+    \item \textbf{En los modelos de Contornos Activos (Snakes), la \textquote{energía interna} de la curva se encarga de:}
+    \begin{enumerate}[label=\alph*)]
+        \item Atraer la curva hacia los bordes de la imagen.
+        \item Controlar la suavidad y elasticidad de la curva (continuidad).
+        \item Calcular el gradiente de la imagen externa.
+        \item Determinar el umbral de binarización.
+    \end{enumerate}
+
+    % TEMA 4: Morfología
+    \item \textbf{¿Qué operación morfológica utilizaría para rellenar pequeños agujeros oscuros dentro de un objeto blanco brillante?}
+    \begin{enumerate}[label=\alph*)]
+        \item Erosión.
+        \item Apertura (Opening).
+        \item Cierre (Closing).
+        \item Esqueletonización.
+    \end{enumerate}
+
+    % TEMA 4: Clusterización
+    \item \textbf{El algoritmo K-medias (K-means) es un método de segmentación:}
+    \begin{enumerate}[label=\alph*)]
+        \item Supervisado (requiere entrenamiento previo).
+        \item No supervisado (agrupa píxeles en $k$ clases basándose en intensidad).
+        \item Basado en detección de bordes mediante gradientes.
+        \item Basado en atlas probabilísticos.
+    \end{enumerate}
+
+\end{enumerate}
+
+% ---------------------------
+% PARTE II: PROBLEMAS
+% ---------------------------
+
+\section*{II. Práctica (6 ptos)}
+\textit{\footnotesize Resuelva los siguientes ejercicios justificando los pasos.}
+
+% ---------------------------
+% PROBLEMA 1
+% ---------------------------
+
+\textbf{P1. Filtros de Suavizado (2 ptos)}\\
+Se tiene la siguiente sub-imagen original $I$ de $3 \times 3$, que presenta un píxel central con ruido notable respecto a sus vecinos:
+\[
+I = 
+\begin{bmatrix}
+10 & 10 & 10 \\
+10 & \mathbf{90} & 10 \\
+10 & 10 & 10
+\end{bmatrix}
+\]
+Se desea aplicar un \textbf{filtro de media} (promedio) de tamaño $3 \times 3$. La máscara del filtro $H$ es:
+\[
+H = \frac{1}{9}
+\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1
+\end{bmatrix}
+\]
+
+\begin{enumerate}[label=\alph*)]
+    \item Calcule el nuevo valor del \textbf{píxel central} tras aplicar la convolución.
+    \item Si en lugar del filtro de media usáramos un \textbf{filtro de mediana} $3 \times 3$, ¿cuál sería el valor del píxel central? Justifique cuál de los dos filtros elimina mejor este tipo de ruido impulsivo.
+\end{enumerate}
+
+\vspace{1mm}
+
+% ---------------------------
+% PROBLEMA 2
+% ---------------------------
+
+\textbf{P2. Transformación Geométrica (2 ptos)} \\
+Consideramos un píxel en la coordenada $P(x, y) = (4, 10)$. 
+\textbf{Nota:} Para todos los apartados, resuelva utilizando \textbf{coordenadas homogéneas} y exprese explícitamente las \textbf{matrices de transformación} utilizadas.
+
+\begin{enumerate}
+    \item[(a)] Defina la matriz de traslación $M_T$ para el vector $\vec{v} = (6, -5)$. Realice el producto matricial para obtener el punto transformado $P'$ en coordenadas homogéneas.
+    
+    \item[(b)] Partiendo de $P'$, defina la matriz de escalado $M_S$ para reducir la imagen a la mitad en ambos ejes ($s_x = 0.5, s_y = 0.5$). Calcule el nuevo punto $P''$ mediante multiplicación matricial.
+    
+    \item[(c)] Si quisiéramos rotar el punto original $P(4, 10)$ 90$^{\circ}$ en sentido \textbf{horario} alrededor del origen: escriba la matriz de rotación $M_R$ correspondiente y calcule la coordenada final.
+\end{enumerate}
+
+\vspace{1mm}
+
+% ---------------------------
+% PROBLEMA 3
+% ---------------------------
+
+\textbf{P3. Morfología Matemática: Erosión (2 ptos)}\\
+Dada la siguiente imagen binaria $I$ de $5 \times 5$ (donde 1 es objeto y 0 es fondo):
+
+\[
+I = 
+\begin{bmatrix}
+0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+Se aplica una \textbf{Erosión} utilizando un elemento estructurante $B$ en forma de cruz ($3 \times 3$):
+\[
+B = 
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & \mathbf{1} & 1 \\
+0 & 1 & 0
+\end{bmatrix}
+\]
+(El centro del elemento estructurante está marcado en negrita).
+
+\begin{enumerate}[label=\alph*)]
+    \item Calcule la imagen resultante tras la erosión.
+    \item ¿Qué efecto visual ha tenido la erosión sobre el píxel aislado en la posición $(4,3)$ (fila 4, columna 3)?
+\end{enumerate}
+
+\end{multicols*}
+
+\end{document}
