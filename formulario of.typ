@@ -43,7 +43,7 @@
   columns: 2,
   align: center,
   stroke: .1pt,
-  inset: (x: .25em, y: 0.78em),
+  inset: (x: .25em, y: 0.70em),
   fill: none,
   // ..shuffle(rng, formulas).at(1),
   ..formulas
